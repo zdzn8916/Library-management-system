@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/style.css"/>       
+		<link href="assets/css/codemirror.css" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/ace.min.css" />
+		<link rel="stylesheet" href="font/css/font-awesome.min.css" />
+		<script src="Js/jquery-3.3.1.min.js"></script>
+		<script src="Js/vue.js"></script>
+		<script src="Js/axios-0.18.0.js"></script>
+		<script src="element-ui/lib/index.js"></script>
+		<link rel="stylesheet" href="element-ui/lib/theme-chalk/index.css">
+		<title>角色管理</title>
+	</head>
+
+<body>
+
+<div id="app">
+ <div class="margin clearfix">
+
+       <span class="l_f">
+        <a href="user_add.html" id="role_add" class="btn btn-warning" title=""><i class="fa fa-plus"></i> 点击这里为你的员工创建账号</a>
+
+       </span>
+
+     </div>
+     <div class="compete_list">
+       <table id="sample-table-1" class="table table-striped table-bordered table-hover">
+		 <thead>
+			<tr>
+
+			  <th width="250">用户编号</th>
+			  <th width="400">用户名称</th>
+              <th width="400">用户职位</th>
+				<th class="hidden-480">操作</th>
+             </tr>
+		    </thead>
+             <tbody>
+			 <tr v-for ="(user,i) in users" align="center">
+				 <td>{{user.userId}}</td>
+				 <td>{{user.userName}}</td>
+				 <td>
+				 <el-select v-model="user.role">
+					 <el-option value="1" label="普通员工"></el-option>
+					 <el-option value="2" label="馆长"></el-option>
+					 <el-option value="3" label="书目管理员"></el-option>
+					 <el-option value="4" label="总管理员"></el-option>
+				 </el-select>
+				 </td>
+					<td>
+
+						<template >
+							<el-button type="primary" @click="dispatch1(user.userId,user.role)">完成调度</el-button>
+							<el-button type="danger" @click="del(user.userId)">删除用户</el-button>
+						</template>
+
+					</td>
+
+			 </tr>
+
+
+
+               								
+		      </tbody>
+
+	        </table>
+     </div>
+ </div>
+</div>
+<script>
+	new Vue({
+		el: "#app",
+		data() {
+			return{
+				users:[],
+				user:{
+					id:'',
+					name:'',
+					role:''
+				},
+			}
+		},
+		mounted() {
+			var _this = this;
+
+			//2.发送ajax请求
+			axios({
+				method: "get",
+				url: "http://localhost:8080/Books/user/selectAll"
+			}).then(function (resp) {
+				console.log(resp.data)
+				_this.users = resp.data.data;
+			})
+
+
+		},
+		methods:{
+			dispatch1(j,i){
+				switch (i){
+					case"普通员工":i="1";break;
+					case"馆长":i="2";break;
+					case"书目管理员":i="3";break;
+					case"总管理员":i="4";break;
+				}
+				axios({
+					method:"post",
+					url:"http://localhost:8080/Books/user/upd?id="+j+"&role="+i,
+
+				}).then(function (resp) {
+					if(resp.data == "success"){
+						//表示删除成功
+						//刷新页面,重新查询数据
+
+						alert("修改成功")
+					}else{
+						alert("修改失败")
+					}
+
+				})
+				location.href="admin_role_list.html"
+			},
+			del(i){
+				var that = this
+				//删除数据
+				console.log(i)
+				axios({
+					method:"get",
+					url:"http://localhost:8080/Books/user/DeleteServlet?userId="+i,
+				}).then(function (resp) {
+					if(resp.data == "success"){
+						//表示删除成功
+						//刷新页面,重新查询数据
+						console.log(resp.data)
+						alert("删除成功")
+					}else{
+						alert("删除失败")
+					}
+
+				})
+				location.href="admin_role_list.html"
+			},
+		}
+	})
+</script>
+</body>
+</html>
+<script type="text/javascript">
+
+
+</script>

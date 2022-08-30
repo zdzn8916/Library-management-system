@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/Books/src/main/webapp/admin_role_list.html" value="file://$PROJECT_DIR$/Books/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/Books/src/main/webapp/book_list.html" value="file://$PROJECT_DIR$/Books/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/Books/src/main/webapp/index.html" value="file://$PROJECT_DIR$/Books/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/Books/src/main/webapp/left.html" value="file://$PROJECT_DIR$/Books/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/Books/src/main/webapp/login.html" value="file://$PROJECT_DIR$/Books/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/Books/src/main/webapp/top.html" value="file://$PROJECT_DIR$/Books/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/Books/src/main/webapp/type_list.html" value="file://$PROJECT_DIR$/Books/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/Books/src/main/webapp/user_add.html" value="file://$PROJECT_DIR$/Books/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/Books/src/main/webapp/user_modify.html" value="file://$PROJECT_DIR$/Books/src/main/webapp" />
+      </map>
+    </option>
+  </component>
+</project>

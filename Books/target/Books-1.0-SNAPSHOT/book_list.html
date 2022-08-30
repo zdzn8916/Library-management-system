@@ -1,0 +1,244 @@
+<!DOCTYPE html >
+<html >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="keywords"  content = "图书 java jsp"/>
+    <meta http-equiv="author" content="phenix"/>
+    <link rel="stylesheet" type="text/css" href="./Style/skin.css" />
+    <style>
+        .el-table .warning-row {
+            background: oldlace;
+        }
+
+        .el-table .success-row {
+            background: #f0f9eb;
+        }
+    </style>
+    <script src="Js/jquery-3.3.1.min.js"></script>
+    <script src="Js/axios-0.18.0.js"></script>
+    <script src="Js/vue.js"></script>
+    <script src="element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="element-ui/lib/theme-chalk/index.css">
+</head>
+    <body>
+    <div id="app">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <!-- 头部开始 -->
+            <tr>
+                <td width="17" valign="top" background="./Images/mail_left_bg.gif">
+                    <img src="./Images/left_top_right.gif" width="17" height="29" />
+                </td>
+                <td valign="top" background="./Images/content_bg.gif">
+                    
+                </td>
+                <td width="16" valign="top" background="./Images/mail_right_bg.gif"><img src="./Images/nav_right_bg.gif" width="16" height="29" /></td>
+            </tr>
+            <!-- 中间部分开始 -->
+
+            <tr>
+                <!--第一行左边框-->
+                <td valign="middle" background="./Images/mail_left_bg.gif">&nbsp;</td>
+                <!--第一行中间内容-->
+                <td valign="top" bgcolor="#F7F8F9">
+                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                        <!-- 空白行-->
+                        <tr><td colspan="2" valign="top">&nbsp;</td><td>&nbsp;</td><td valign="top">&nbsp;</td></tr>
+                        <tr>
+                            <td colspan="4">
+                                <table>
+                                    <tr>
+                                        <td width="100" align="center"><img src="./Images/mime.gif" /></td>
+                                        <td valign="bottom"><h3 style="letter-spacing:1px;">书籍管理 > 书籍列表 </h3></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                            <table width="100%" border="1" class="cont"  >
+                                <tr>
+                                    <td colspan="8">
+
+                                        请输入:&nbsp;&nbsp;<input class="text" type="text" id="bookContent" name="bookContent" ref="bookName" placeholder="输入书名"/>
+                                        <input type="button" id="btnQueryBook" value="确定" @click="findByName"  style="width: 80px;"/>
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                        <!-- 一条线 -->
+                        <tr>
+                            <td height="40" colspan="4">
+                                <table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC">
+                                    <tr><td></td></tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- 产品列表开始 -->
+                        <tr>
+                            <td width="2%">&nbsp;</td>
+                            <td width="96%">
+
+                                <table width="100%">
+                                    <tr>
+                                        <td colspan="2">
+                                            <form action="" method="">
+                                                <table id="bookTable" width="100%"  class="cont tr_color">
+                                                    <tr>
+                                                        <th>id</th>
+                                                        <th>ISBN</th>
+                                                        <th>名称</th>
+                                                        <th>所属类别</th>
+                                                        <th>剩余件数</th>
+                                                        <th>价格</th>
+                                                        <th>作者</th>
+                                                        <th>操作</th>
+
+                                                    </tr>
+
+                                                    <tr v-for ="(book,i) in books" align="center">
+                                                        <td>{{book.bookId}}</td>
+                                                        <td>{{book.iSBN}}</td>
+                                                        <td>{{book.bookName}}</td>
+                                                        <td>{{book.bookCategory}}</td>
+                                                        <td>{{book.bookInventory}}</td>
+                                                        <td>{{book.bookPrice}}</td>
+                                                        <td>{{book.bookAuthor}}</td>
+
+                                                        <td>
+                                                            <template>
+                                                            <button type="text" @click="del(book.bookId)" >删除</button>
+                                                                <form name="frm" method="get" action="book_modify.html">
+                                                                    <button   id="upd" name="id"     type="text" @click="upd(book.bookId)" >修改</button>
+                                                                </form>
+                                                                </template>
+                                                        </td>
+
+
+
+
+                                                    </tr>
+                                                </table>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </td>
+                            <td width="2%">&nbsp;</td>
+                        </tr>
+                        <!-- 产品列表结束 -->
+                        <tr>
+                            <td height="40" colspan="4">
+                                <table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC">
+                                    <tr><td></td></tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="2%">&nbsp;</td>
+                            <td width="51%" class="left_txt">
+                                <img src="./Images/icon_mail.gif" width="16" height="11"> 客户服务邮箱：2473131783@qq.com<br />
+                            </td>
+                            <td>&nbsp;</td><td>&nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+                <td background="./Images/mail_right_bg.gif">&nbsp;</td>
+            </tr>
+            <!-- 底部部分 -->
+            <tr>
+                <td valign="bottom" background="./Images/mail_left_bg.gif">
+                    <img src="./Images/buttom_left.gif" width="17" height="17" />
+                </td>
+                <td background="./Images/buttom_bgs.gif">
+                    <img src="./Images/buttom_bgs.gif" width="17" height="17">
+                </td>
+                <td valign="bottom" background="./Images/mail_right_bg.gif">
+                    <img src="./Images/buttom_right.gif" width="16" height="17" />
+                </td>           
+            </tr>
+
+        </table>
+    </div>
+
+    <script>
+            new Vue({
+                el: "#app",
+                data() {
+                    return {
+                        books: [],
+                        book: {
+                            iSBN:'',
+                            bookName:'',
+                            bookCategory:'',
+                            id:'',
+                            bookInventory: '',
+                            bookAuthor: '',
+                            bookPrice:'',
+                        },
+                    }
+                },
+                mounted() {
+                    var _this = this;
+
+                    //2.发送ajax请求
+                    axios({
+                        method: "get",
+                        url: "http://localhost:8080/Books/book/selectAll"
+                    }).then(function (resp) {
+                        _this.books = resp.data;
+                    })
+
+                },
+                methods: {
+
+                    findByName() {
+                        var _this = this;
+                        var bookName = _this.$refs.bookName.value
+                        //2.发送ajax请求
+                        axios({
+                            method: "post",
+                            url: "http://localhost:8080/Books/book/findByName?bookName=" + bookName,
+                            data:bookName
+                        }).then(function (resp) {
+                            _this.books = resp.data;
+                            console.log(_this.books)
+                        })
+                    },
+                    //修改数据
+                    upd:function (i) {
+                        window.open('book_modify.html?'+i)
+                    },
+                    //删除数据
+                    del:function (i) {
+                        var that = this
+                        //删除数据
+                        console.log(i)
+
+                        //要删除的对象的id
+                            // console.log(this.brand.id);
+                            //弹出确认删除的提示框
+
+                                //用户点击确认按钮
+                                //发送ajax请求
+                                axios({
+                                    method:"get",
+                                    url:"http://localhost:8080/Books/book/DeleteServlet?bookId="+i,
+                                }).then(function (resp) {
+                                    if(resp.data == "success"){
+                                        //表示删除成功
+                                        //刷新页面,重新查询数据
+                                        console.log(resp.data)
+                                        alert("删除成功")
+                                }else{
+                                        alert("删除失败")
+                                    }
+                            })
+                        },
+                    },
+            })
+
+        </script>
+    </body>
+</html>

@@ -75,3 +75,58 @@
 书目管理员:1,2
 
 总管理员:5
+
+# 功能实现:
+
+1. 登录
+
+登录失败
+
+![image-20220831000248134](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220831000248134.png)
+
+登录成功,跳转到首页，并显示当前用户
+
+![image-20220831000336754](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220831000336754.png)
+
+2. 查看日志
+
+![image-20220830235528941](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220830235528941.png)
+
+3. 权限限制
+
+![image-20220830235609904](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220830235609904.png)
+
+4. 模糊查询
+
+![image-20220830235711634](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220830235711634.png)
+
+5. 图书类型
+
+![image-20220830235740910](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220830235740910.png)
+
+![image-20220830235750639](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220830235750639.png)
+
+6. 图书借阅
+
+![image-20220830235821563](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220830235821563.png)
+
+图书借阅仅仅是将所选图书的数量进行-1操作
+
+7. 图书归还
+
+![image-20220830235927183](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220830235927183.png)
+
+图书归还仅仅是将所选图书的数量进行+1操作
+
+8. 职员管理
+
+![image-20220830235958709](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220830235958709.png)
+
+可通过下拉框选择用户职位,点击完成调度才会生效
+
+9. 新增职员
+
+![image-20220831000044882](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220831000044882.png)
+
+同样的,通过下拉框选择员工职位
+

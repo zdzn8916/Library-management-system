@@ -81,8 +81,7 @@
 1. 登录
 
 登录失败
-
-![image-20220831000248134](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220831000248134.png)
+![image-20220831000248134](https://user-images.githubusercontent.com/95353331/187810041-38637f28-9b85-44a9-9e12-f070aac5003a.png)
 
 登录成功,跳转到首页，并显示当前用户
 

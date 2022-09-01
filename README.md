@@ -88,44 +88,38 @@
 ![image](https://user-images.githubusercontent.com/95353331/187810228-4176ef05-9f97-48e2-982d-bddac9f7e580.png)
 
 2. 查看日志
-
-![image-20220830235528941](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220830235528941.png)
+![image](https://user-images.githubusercontent.com/95353331/187810282-e947d15a-a4cd-4307-afca-c648470699ab.png)
 
 3. 权限限制
 
-![image-20220830235609904](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220830235609904.png)
+![image](https://user-images.githubusercontent.com/95353331/187810303-0eaffb3e-1fd4-46bc-adca-9779afeff2e8.png)
 
 4. 模糊查询
 
-![image-20220830235711634](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220830235711634.png)
+![image](https://user-images.githubusercontent.com/95353331/187810346-860dd8ba-5a5a-4aca-abef-f301971e8df0.png)
 
 5. 图书类型
+![image](https://user-images.githubusercontent.com/95353331/187810328-520de5bb-8c0b-407b-a55d-dc77e4e13627.png) 
 
-![image-20220830235740910](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220830235740910.png)
-
-![image-20220830235750639](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220830235750639.png)
+![image](https://user-images.githubusercontent.com/95353331/187810319-081ee36b-c6e1-474c-a62b-7e77809f53f3.png)
 
 6. 图书借阅
 
-![image-20220830235821563](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220830235821563.png)
+![image](https://user-images.githubusercontent.com/95353331/187810353-5e5ee4a4-7ed0-4c49-b2b9-c34fb731e4ca.png)
 
 图书借阅仅仅是将所选图书的数量进行-1操作
 
 7. 图书归还
 
-![image-20220830235927183](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220830235927183.png)
 
 图书归还仅仅是将所选图书的数量进行+1操作
 
 8. 职员管理
-
-![image-20220830235958709](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220830235958709.png)
+![image](https://user-images.githubusercontent.com/95353331/187810370-52df48f4-f09d-4704-a007-c459e426e8b3.png)
 
 可通过下拉框选择用户职位,点击完成调度才会生效
 
 9. 新增职员
-
-![image-20220831000044882](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220831000044882.png)
-
+![image](https://user-images.githubusercontent.com/95353331/187810363-936b4587-e3b8-4334-afc9-90e829a04a98.png)
 同样的,通过下拉框选择员工职位
 

@@ -85,7 +85,7 @@
 
 登录成功,跳转到首页，并显示当前用户
 
-![image-20220831000336754](C:\Users\24731\AppData\Roaming\Typora\typora-user-images\image-20220831000336754.png)
+![image](https://user-images.githubusercontent.com/95353331/187810228-4176ef05-9f97-48e2-982d-bddac9f7e580.png)
 
 2. 查看日志
 
